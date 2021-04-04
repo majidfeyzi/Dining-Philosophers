@@ -11,8 +11,8 @@ public class Table extends JPanel {
 	// States of philosophers to show
 	private List<String> states = new ArrayList<String>();
 
-	private final int tableSize = 768;
-    private final int philosopherSize = 150;
+	private final int tableSize = 468;
+    private final int philosopherSize = 50;
     private final int philosopherHandSize = philosopherSize / 2;
     private final int forkSize = philosopherHandSize;
     private final Point tableCenter;
@@ -33,7 +33,7 @@ public class Table extends JPanel {
     	super.paintComponent(g);
         graphics = (Graphics2D) g;
         graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        graphics.setFont(new Font("Tahoma", Font.BOLD, 30)); 
+        graphics.setFont(new Font("Tahoma", Font.BOLD, 15));
         
         drawTable();
     }
@@ -89,7 +89,7 @@ public class Table extends JPanel {
         graphics.setColor(Color.blue);
         graphics.fillOval(centerX - (philosopherSize / 2), centerY - (philosopherSize / 2), philosopherSize, philosopherSize);
     	graphics.setColor(Color.white);
-        graphics.drawString(name, centerX - 10, centerY + 5);
+        graphics.drawString(name, centerX - 5, centerY + 5);
         
         // Change (decrease) radius of hands
         float hradius = radius - 10;
@@ -106,7 +106,7 @@ public class Table extends JPanel {
         	graphics.setColor(Color.lightGray);
         graphics.fillOval(centerLX - (philosopherHandSize / 2), centerLY - (philosopherHandSize / 2), philosopherHandSize, philosopherHandSize);
     	graphics.setColor(Color.black);
-        graphics.drawString("L", centerLX - 10, centerLY + 5);
+        graphics.drawString("L", centerLX - 5, centerLY + 5);
         
         // Compute center of philosopher right hand circle
         float rangle = angle - 10;
@@ -120,7 +120,7 @@ public class Table extends JPanel {
         	graphics.setColor(Color.lightGray);
         graphics.fillOval(centerRX - (philosopherHandSize / 2), centerRY - (philosopherHandSize / 2), philosopherHandSize, philosopherHandSize);
     	graphics.setColor(Color.black);
-        graphics.drawString("R", centerRX - 10, centerRY + 5);
+        graphics.drawString("R", centerRX - 5, centerRY + 5);
     }
     
     /*
@@ -141,7 +141,7 @@ public class Table extends JPanel {
             graphics.drawOval(centerX - (forkSize / 2), centerY - (forkSize / 2), forkSize, forkSize);
         }
     	graphics.setColor(Color.black);
-        graphics.drawString(name, centerX - 10, centerY + 5);
+        graphics.drawString(name, centerX - 5, centerY + 5);
     }
 
     /*

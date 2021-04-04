@@ -55,11 +55,13 @@ public class Main {
 		
 		frame = new JFrame();
 		frame.setSize(WIDTH, HEIGHT);
+		frame.setBackground(Color.white);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		table = new Table(philosophersCount, new Point(WIDTH / 2, HEIGHT / 2));
+		table.setBackground(Color.white);
 		frame.getContentPane().add(table, BorderLayout.CENTER);
 		
     	// Create actor system
